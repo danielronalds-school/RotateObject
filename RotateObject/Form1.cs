@@ -12,9 +12,19 @@ namespace RotateObject
 {
     public partial class Form1 : Form
     {
+        Graphics g;
+        Spaceship spaceship = new Spaceship();
+
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void Canvas_Paint(object sender, PaintEventArgs e)
+        {
+            g = e.Graphics;
+            // Drawing the spaceship
+            spaceship.drawSpaceship(g);
         }
     }
 }

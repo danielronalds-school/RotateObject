@@ -28,13 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.Canvas = new System.Windows.Forms.Panel();
+            this.SuspendLayout();
+            // 
+            // Canvas
+            // 
+            this.Canvas.BackColor = System.Drawing.Color.Silver;
+            this.Canvas.Location = new System.Drawing.Point(12, 12);
+            this.Canvas.Name = "Canvas";
+            this.Canvas.Size = new System.Drawing.Size(716, 522);
+            this.Canvas.TabIndex = 0;
+            this.Canvas.Paint += new System.Windows.Forms.PaintEventHandler(this.Canvas_Paint);
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(740, 546);
+            this.Controls.Add(this.Canvas);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Panel Canvas;
     }
 }
 
