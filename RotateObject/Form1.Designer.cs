@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.Canvas = new System.Windows.Forms.Panel();
             this.tmrSpaceship = new System.Windows.Forms.Timer(this.components);
+            this.tmrPlanet = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // Canvas
@@ -49,6 +50,12 @@
             this.tmrSpaceship.Enabled = true;
             this.tmrSpaceship.Interval = 1;
             this.tmrSpaceship.Tick += new System.EventHandler(this.tmrSpaceship_Tick);
+            // 
+            // tmrPlanet
+            // 
+            this.tmrPlanet.Enabled = true;
+            this.tmrPlanet.Interval = 35;
+            this.tmrPlanet.Tick += new System.EventHandler(this.tmrPlanet_Tick);
             // 
             // Form1
             // 
@@ -70,6 +77,7 @@
 
         private System.Windows.Forms.Panel Canvas;
         private System.Windows.Forms.Timer tmrSpaceship;
+        private System.Windows.Forms.Timer tmrPlanet;
     }
 }
 
