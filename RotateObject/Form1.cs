@@ -16,11 +16,13 @@ namespace RotateObject
     {
         Graphics g;
         Spaceship spaceship = new Spaceship();
-        Planet[] planet = new Planet[9];
+        Planet[] planet = new Planet[6];
         Random yspeed = new Random();
 
         bool turnLeft;
         bool turnRight;
+
+        int score;
 
         List<Missile> missiles = new List<Missile>();
 
@@ -28,9 +30,9 @@ namespace RotateObject
         {
             InitializeComponent();
             typeof(Panel).InvokeMember("DoubleBuffered", BindingFlags.SetProperty | BindingFlags.Instance | BindingFlags.NonPublic, null, Canvas, new object[] { true });
-            for (int i = 0; i < 9; i++)
+            for (int i = 0; i < 6; i++)
             {
-                int x = 10 + (i * 75);
+                int x = 10 + (i * 140);
                 planet[i] = new Planet(x);
             }
 
@@ -40,7 +42,7 @@ namespace RotateObject
         private void Canvas_Paint(object sender, PaintEventArgs e)
         {
             g = e.Graphics;
-            for (int i = 0; i < 9; i++)
+            for (int i = 0; i < 6; i++)
             {
                 int rndmspeed = yspeed.Next(1, 10);
                 planet[i].y += rndmspeed;
@@ -100,23 +102,30 @@ namespace RotateObject
 
         private void tmrPlanet_Tick(object sender, EventArgs e)
         {
-            for (int i = 0; i < 9; i++)
+            for (int i = 0; i < 6; i++)
             {
                 planet[i].MovePlanet(); 
                 if (planet[i].y >= Canvas.Height)
                 {
-                    planet[i].y = 30;
+                    planet[i].y = 10;
                 }
                 foreach (Missile m in missiles)
                 {
                     if(planet[i].planetRec.IntersectsWith(m.missileRec))
                     {
-                        planet[i].y = 30;
+                        planet[i].y = 10;
+                        score++;
+                        UpdateScoreDisplay();
                     }
                 }
 
             }
             Canvas.Invalidate();
+        }
+
+        public void UpdateScoreDisplay()
+        {
+            ScoreTxtDisplay.Text = Convert.ToString(score);
         }
     }
 }

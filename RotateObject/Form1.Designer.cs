@@ -32,6 +32,10 @@
             this.Canvas = new System.Windows.Forms.Panel();
             this.tmrSpaceship = new System.Windows.Forms.Timer(this.components);
             this.tmrPlanet = new System.Windows.Forms.Timer(this.components);
+            this.LifeTxt = new System.Windows.Forms.Label();
+            this.ScoreTxt = new System.Windows.Forms.Label();
+            this.LifeTxtDisplay = new System.Windows.Forms.Label();
+            this.ScoreTxtDisplay = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Canvas
@@ -54,13 +58,54 @@
             // tmrPlanet
             // 
             this.tmrPlanet.Enabled = true;
+            this.tmrPlanet.Interval = 50;
             this.tmrPlanet.Tick += new System.EventHandler(this.tmrPlanet_Tick);
+            // 
+            // LifeTxt
+            // 
+            this.LifeTxt.AutoSize = true;
+            this.LifeTxt.Location = new System.Drawing.Point(668, 21);
+            this.LifeTxt.Name = "LifeTxt";
+            this.LifeTxt.Size = new System.Drawing.Size(24, 13);
+            this.LifeTxt.TabIndex = 1;
+            this.LifeTxt.Text = "Life";
+            // 
+            // ScoreTxt
+            // 
+            this.ScoreTxt.AutoSize = true;
+            this.ScoreTxt.Location = new System.Drawing.Point(668, 34);
+            this.ScoreTxt.Name = "ScoreTxt";
+            this.ScoreTxt.Size = new System.Drawing.Size(35, 13);
+            this.ScoreTxt.TabIndex = 2;
+            this.ScoreTxt.Text = "Score";
+            // 
+            // LifeTxtDisplay
+            // 
+            this.LifeTxtDisplay.AutoSize = true;
+            this.LifeTxtDisplay.Location = new System.Drawing.Point(709, 21);
+            this.LifeTxtDisplay.Name = "LifeTxtDisplay";
+            this.LifeTxtDisplay.Size = new System.Drawing.Size(19, 13);
+            this.LifeTxtDisplay.TabIndex = 3;
+            this.LifeTxtDisplay.Text = "10";
+            // 
+            // ScoreTxtDisplay
+            // 
+            this.ScoreTxtDisplay.AutoSize = true;
+            this.ScoreTxtDisplay.Location = new System.Drawing.Point(709, 34);
+            this.ScoreTxtDisplay.Name = "ScoreTxtDisplay";
+            this.ScoreTxtDisplay.Size = new System.Drawing.Size(13, 13);
+            this.ScoreTxtDisplay.TabIndex = 4;
+            this.ScoreTxtDisplay.Text = "0";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(723, 546);
+            this.ClientSize = new System.Drawing.Size(787, 546);
+            this.Controls.Add(this.ScoreTxtDisplay);
+            this.Controls.Add(this.LifeTxtDisplay);
+            this.Controls.Add(this.ScoreTxt);
+            this.Controls.Add(this.LifeTxt);
             this.Controls.Add(this.Canvas);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -69,6 +114,7 @@
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -77,6 +123,10 @@
         private System.Windows.Forms.Panel Canvas;
         private System.Windows.Forms.Timer tmrSpaceship;
         private System.Windows.Forms.Timer tmrPlanet;
+        private System.Windows.Forms.Label LifeTxt;
+        private System.Windows.Forms.Label ScoreTxt;
+        private System.Windows.Forms.Label LifeTxtDisplay;
+        private System.Windows.Forms.Label ScoreTxtDisplay;
     }
 }
 
