@@ -13,6 +13,7 @@ namespace RotateObject
     {
         public int x, y, width, height;
         public int missileRotated;
+        public int missileSpeed = 10;
         public double xSpeed, ySpeed;
         public Image missile;//variable for the missile's image
         public Rectangle missileRec;//variable for a rectangle to place our image in
@@ -25,11 +26,11 @@ namespace RotateObject
         {
             width = 10;
             height = 20;
-            missile = Image.FromFile("missile_small.png");
+            missile = Properties.Resources.missile_small;
             missileRec = new Rectangle(x, y, width, height);
             //this code works out the speed of the missile to be used in the moveMissile method
-            xSpeed = 30 * (Math.Cos((missileRotate - 90) * Math.PI / 180));
-            ySpeed = 30 * (Math.Sin((missileRotate + 90) * Math.PI / 180));
+            xSpeed = missileSpeed * (Math.Cos((missileRotate - 90) * Math.PI / 180));
+            ySpeed = missileSpeed * (Math.Sin((missileRotate + 90) * Math.PI / 180));
             //calculate x,y to move missile to middle of spaceship in drawMissile method
             x = spaceRec.X + spaceRec.Width / 2;
             y = spaceRec.Y + spaceRec.Height / 2;

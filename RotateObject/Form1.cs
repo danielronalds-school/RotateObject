@@ -20,6 +20,8 @@ namespace RotateObject
         bool turnLeft;
         bool turnRight;
 
+        List<Missile> missiles = new List<Missile>();
+
         public Form1()
         {
             InitializeComponent();
@@ -31,7 +33,13 @@ namespace RotateObject
         {
             g = e.Graphics;
             // Drawing the spaceship
-            spaceship.drawSpaceship(g);
+            spaceship.drawSpaceship(g); 
+            foreach (Missile m in missiles)
+            {
+                m.drawMissile(g);
+                m.moveMissile(g);
+            }
+
         }
 
         private void Form1_MouseMove(object sender, MouseEventArgs e)
@@ -63,6 +71,15 @@ namespace RotateObject
         {
             if (e.KeyData == Keys.Left) { turnLeft = false; }
             if (e.KeyData == Keys.Right) { turnRight = false; }
+        }
+
+        private void Form1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                missiles.Add(new Missile(spaceship.spaceRec, spaceship.rotationAngle));
+            }
+
         }
     }
 }
