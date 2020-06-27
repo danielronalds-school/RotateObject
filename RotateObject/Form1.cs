@@ -17,12 +17,13 @@ namespace RotateObject
         Graphics g;
         Spaceship spaceship = new Spaceship();
         Planet[] planet = new Planet[6];
-        Random yspeed = new Random();
+        Random yspawn = new Random();
 
         bool turnLeft;
         bool turnRight;
 
         int score;
+        int life = 10;
 
         List<Missile> missiles = new List<Missile>();
 
@@ -44,8 +45,7 @@ namespace RotateObject
             g = e.Graphics;
             for (int i = 0; i < 6; i++)
             {
-                int rndmspeed = yspeed.Next(1, 10);
-                planet[i].y += rndmspeed;
+                planet[i].y++;
 
                 planet[i].DrawPlanet(g);
             }
@@ -107,14 +107,18 @@ namespace RotateObject
                 planet[i].MovePlanet(); 
                 if (planet[i].y >= Canvas.Height)
                 {
-                    planet[i].y = 10;
+                    int rndmyspawn = yspawn.Next(1, 80);
+                    life--;
+                    UpdateLifeDisplay();
+                    planet[i].y = rndmyspawn;
                 }
                 foreach (Missile m in missiles)
                 {
                     if(planet[i].planetRec.IntersectsWith(m.missileRec))
                     {
-                        planet[i].y = 10;
-                        score++;
+                        int rndmyspawn = yspawn.Next(1, 80);
+                        planet[i].y = rndmyspawn;
+                        score += 100;
                         UpdateScoreDisplay();
                     }
                 }
@@ -126,6 +130,19 @@ namespace RotateObject
         public void UpdateScoreDisplay()
         {
             ScoreTxtDisplay.Text = Convert.ToString(score);
+        }
+
+        public void UpdateLifeDisplay()
+        {
+            LifeTxtDisplay.Text = Convert.ToString(life);
+            if(life == 0) { GameOver(); }
+        }
+
+        public void GameOver()
+        {
+            tmrSpaceship.Enabled = false;
+            tmrPlanet.Enabled = false;
+            MessageBox.Show("Game Over!");
         }
     }
 }

@@ -58,7 +58,7 @@
             // tmrPlanet
             // 
             this.tmrPlanet.Enabled = true;
-            this.tmrPlanet.Interval = 50;
+            this.tmrPlanet.Interval = 1;
             this.tmrPlanet.Tick += new System.EventHandler(this.tmrPlanet_Tick);
             // 
             // LifeTxt
@@ -108,6 +108,7 @@
             this.Controls.Add(this.LifeTxt);
             this.Controls.Add(this.Canvas);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
