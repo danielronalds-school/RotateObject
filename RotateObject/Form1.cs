@@ -107,6 +107,13 @@ namespace RotateObject
                 {
                     planet[i].y = 30;
                 }
+                foreach (Missile m in missiles)
+                {
+                    if(planet[i].planetRec.IntersectsWith(m.missileRec))
+                    {
+                        planet[i].y = 30;
+                    }
+                }
 
             }
             Canvas.Invalidate();

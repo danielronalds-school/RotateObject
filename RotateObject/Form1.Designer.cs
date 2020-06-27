@@ -54,14 +54,13 @@
             // tmrPlanet
             // 
             this.tmrPlanet.Enabled = true;
-            this.tmrPlanet.Interval = 35;
             this.tmrPlanet.Tick += new System.EventHandler(this.tmrPlanet_Tick);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(740, 546);
+            this.ClientSize = new System.Drawing.Size(723, 546);
             this.Controls.Add(this.Canvas);
             this.Name = "Form1";
             this.Text = "Form1";
