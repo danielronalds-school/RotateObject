@@ -16,6 +16,7 @@ namespace RotateObject
     {
         Graphics g;
         Spaceship spaceship = new Spaceship();
+        Planet[] planet = new Planet[9];
 
         bool turnLeft;
         bool turnRight;
@@ -26,25 +27,35 @@ namespace RotateObject
         {
             InitializeComponent();
             typeof(Panel).InvokeMember("DoubleBuffered", BindingFlags.SetProperty | BindingFlags.Instance | BindingFlags.NonPublic, null, Canvas, new object[] { true });
+            for (int i = 0; i < 9; i++)
+            {
+                int x = 10 + (i * 75);
+                planet[i] = new Planet(x);
+            }
+
 
         }
 
         private void Canvas_Paint(object sender, PaintEventArgs e)
         {
             g = e.Graphics;
+            for (int i = 0; i < 9; i++)
+            {
+                planet[i].DrawPlanet(g);
+            }
             // Drawing the spaceship
-            spaceship.drawSpaceship(g); 
+            spaceship.drawSpaceship(g);
+            // NOTE: anything introduced after this will be rotated with the spaceship
             foreach (Missile m in missiles)
             {
                 m.drawMissile(g);
                 m.moveMissile(g);
             }
-
         }
 
         private void Form1_MouseMove(object sender, MouseEventArgs e)
         {
-            spaceship.moveSpaceship(e.X, e.Y);
+            //spaceship.moveSpaceship(e.X, e.Y);
             Console.WriteLine("Mouse Moved");
         }
 
@@ -65,6 +76,7 @@ namespace RotateObject
         {
             if (e.KeyData == Keys.Left) { turnLeft = true; }
             if (e.KeyData == Keys.Right) { turnRight = true; }
+            if(e.KeyData == Keys.Space) { missiles.Add(new Missile(spaceship.spaceRec, spaceship.rotationAngle)); }
         }
 
         private void Form1_KeyUp(object sender, KeyEventArgs e)

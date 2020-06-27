@@ -38,7 +38,7 @@
             this.Canvas.BackColor = System.Drawing.Color.Silver;
             this.Canvas.Location = new System.Drawing.Point(12, 12);
             this.Canvas.Name = "Canvas";
-            this.Canvas.Size = new System.Drawing.Size(716, 522);
+            this.Canvas.Size = new System.Drawing.Size(650, 522);
             this.Canvas.TabIndex = 0;
             this.Canvas.Paint += new System.Windows.Forms.PaintEventHandler(this.Canvas_Paint);
             this.Canvas.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);

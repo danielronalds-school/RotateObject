@@ -24,8 +24,8 @@ namespace RotateObject
         //Create a constructor (initialises the values of the fields)
         public Spaceship()
         {
-            x = 10;
-            y = 360;
+            x = 305;
+            y = 480;
             width = 40;
             height = 40;
             rotationAngle = 0;
