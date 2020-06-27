@@ -140,9 +140,30 @@ namespace RotateObject
 
         public void GameOver()
         {
+            GameStop();
+            MessageBox.Show("Game Over!");
+        }
+
+        public void GameStop()
+        {
             tmrSpaceship.Enabled = false;
             tmrPlanet.Enabled = false;
-            MessageBox.Show("Game Over!");
+        }
+
+        public void GameStart()
+        {
+            tmrSpaceship.Enabled = true;
+            tmrPlanet.Enabled = true;
+        }
+
+        private void MnuStart_Click(object sender, EventArgs e)
+        {
+            GameStart();
+        }
+
+        private void MnuStop_Click(object sender, EventArgs e)
+        {
+            GameStop();
         }
     }
 }
