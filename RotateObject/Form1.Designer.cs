@@ -36,17 +36,13 @@
             this.ScoreTxt = new System.Windows.Forms.Label();
             this.LifeTxtDisplay = new System.Windows.Forms.Label();
             this.ScoreTxtDisplay = new System.Windows.Forms.Label();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.MnuStart = new System.Windows.Forms.ToolStripMenuItem();
-            this.MnuStop = new System.Windows.Forms.ToolStripMenuItem();
-            this.Canvas.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
+            this.StartButton = new System.Windows.Forms.Button();
+            this.StopButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Canvas
             // 
             this.Canvas.BackColor = System.Drawing.Color.Silver;
-            this.Canvas.Controls.Add(this.menuStrip1);
             this.Canvas.Location = new System.Drawing.Point(12, 12);
             this.Canvas.Name = "Canvas";
             this.Canvas.Size = new System.Drawing.Size(650, 522);
@@ -57,7 +53,7 @@
             // 
             // tmrSpaceship
             // 
-            this.tmrSpaceship.Interval = 1;
+            this.tmrSpaceship.Interval = 20;
             this.tmrSpaceship.Tick += new System.EventHandler(this.tmrSpaceship_Tick);
             // 
             // tmrPlanet
@@ -101,42 +97,38 @@
             this.ScoreTxtDisplay.TabIndex = 4;
             this.ScoreTxtDisplay.Text = "0";
             // 
-            // menuStrip1
+            // StartButton
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MnuStart,
-            this.MnuStop});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(650, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.StartButton.Location = new System.Drawing.Point(671, 86);
+            this.StartButton.Name = "StartButton";
+            this.StartButton.Size = new System.Drawing.Size(104, 23);
+            this.StartButton.TabIndex = 5;
+            this.StartButton.Text = "Start";
+            this.StartButton.UseVisualStyleBackColor = true;
+            this.StartButton.Click += new System.EventHandler(this.MnuStart_Click);
             // 
-            // MnuStart
+            // StopButton
             // 
-            this.MnuStart.Name = "MnuStart";
-            this.MnuStart.Size = new System.Drawing.Size(43, 20);
-            this.MnuStart.Text = "Start";
-            this.MnuStart.Click += new System.EventHandler(this.MnuStart_Click);
-            // 
-            // MnuStop
-            // 
-            this.MnuStop.Name = "MnuStop";
-            this.MnuStop.Size = new System.Drawing.Size(43, 20);
-            this.MnuStop.Text = "Stop";
-            this.MnuStop.Click += new System.EventHandler(this.MnuStop_Click);
+            this.StopButton.Location = new System.Drawing.Point(671, 115);
+            this.StopButton.Name = "StopButton";
+            this.StopButton.Size = new System.Drawing.Size(104, 23);
+            this.StopButton.TabIndex = 6;
+            this.StopButton.Text = "Stop";
+            this.StopButton.UseVisualStyleBackColor = true;
+            this.StopButton.Click += new System.EventHandler(this.MnuStop_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(787, 546);
+            this.Controls.Add(this.StopButton);
+            this.Controls.Add(this.StartButton);
             this.Controls.Add(this.ScoreTxtDisplay);
             this.Controls.Add(this.LifeTxtDisplay);
             this.Controls.Add(this.ScoreTxt);
             this.Controls.Add(this.LifeTxt);
             this.Controls.Add(this.Canvas);
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -144,10 +136,6 @@
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
-            this.Canvas.ResumeLayout(false);
-            this.Canvas.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,9 +150,8 @@
         private System.Windows.Forms.Label ScoreTxt;
         private System.Windows.Forms.Label LifeTxtDisplay;
         private System.Windows.Forms.Label ScoreTxtDisplay;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem MnuStart;
-        private System.Windows.Forms.ToolStripMenuItem MnuStop;
+        private System.Windows.Forms.Button StartButton;
+        private System.Windows.Forms.Button StopButton;
     }
 }
 

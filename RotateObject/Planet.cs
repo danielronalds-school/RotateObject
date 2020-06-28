@@ -19,8 +19,8 @@ namespace RotateObject
         {
             x = spacing;
             y = 10;
-            width = 20;
-            height = 20;
+            width = 30;
+            height = 30;
             //planetImage contains the plane1.png image
             planetImage = Properties.Resources.planet1;
             planetRec = new Rectangle(x, y, width, height);
