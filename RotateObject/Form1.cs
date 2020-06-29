@@ -37,6 +37,8 @@ namespace RotateObject
                 planet[i] = new Planet(x);
             }
 
+            StartScreen(false);
+
             UpdateHealthBar();
         }
 
@@ -142,13 +144,16 @@ namespace RotateObject
         public void GameOver()
         {
             GameStop();
-            MessageBox.Show("Game Over!");
+            Gameover_score.Text = Convert.ToString(score);
+            Gameover_Panel.Left = 0;
+            Gameover_Panel.Top = 0;
         }
 
         public void GameStop()
         {
             tmrSpaceship.Enabled = false;
             tmrPlanet.Enabled = false;
+
         }
 
         public void GameStart()
@@ -159,6 +164,7 @@ namespace RotateObject
 
         private void MnuStart_Click(object sender, EventArgs e)
         {
+            StartScreen(true);
             GameStart();
         }
 
@@ -170,6 +176,21 @@ namespace RotateObject
         private void UpdateHealthBar()
         {
             Healthbar.Width = life * 20; 
+        }
+
+        private void StartScreen(bool Hidden)
+        {
+            if (Hidden)
+            {
+                Startscreen_Panel.Left += 1000;
+                Start.Enabled = false;
+            }
+            else
+            {
+                Startscreen_Panel.Left = 0;
+                Startscreen_Panel.Top = 0;
+                Start.Enabled = true;
+            }
         }
     }
 }

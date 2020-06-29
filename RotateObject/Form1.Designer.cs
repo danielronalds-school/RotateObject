@@ -40,11 +40,21 @@
             this.Healthbar = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.Gameover_Panel = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Gameover_score = new System.Windows.Forms.Label();
+            this.Startscreen_Panel = new System.Windows.Forms.Panel();
+            this.Start = new System.Windows.Forms.Button();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.Canvas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Healthbar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.Gameover_Panel.SuspendLayout();
+            this.Startscreen_Panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // Canvas
@@ -154,12 +164,90 @@
             this.pictureBox3.TabIndex = 10;
             this.pictureBox3.TabStop = false;
             // 
+            // Gameover_Panel
+            // 
+            this.Gameover_Panel.Controls.Add(this.Gameover_score);
+            this.Gameover_Panel.Controls.Add(this.label1);
+            this.Gameover_Panel.Location = new System.Drawing.Point(668, 117);
+            this.Gameover_Panel.Name = "Gameover_Panel";
+            this.Gameover_Panel.Size = new System.Drawing.Size(679, 545);
+            this.Gameover_Panel.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Black;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Lime;
+            this.label1.Location = new System.Drawing.Point(178, 181);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(323, 55);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "GAME OVER";
+            // 
+            // Gameover_score
+            // 
+            this.Gameover_score.AutoSize = true;
+            this.Gameover_score.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Gameover_score.ForeColor = System.Drawing.Color.Lime;
+            this.Gameover_score.Location = new System.Drawing.Point(271, 263);
+            this.Gameover_score.Name = "Gameover_score";
+            this.Gameover_score.Size = new System.Drawing.Size(136, 55);
+            this.Gameover_score.TabIndex = 1;
+            this.Gameover_score.Text = "1000";
+            // 
+            // Startscreen_Panel
+            // 
+            this.Startscreen_Panel.Controls.Add(this.label2);
+            this.Startscreen_Panel.Controls.Add(this.pictureBox4);
+            this.Startscreen_Panel.Controls.Add(this.Start);
+            this.Startscreen_Panel.Location = new System.Drawing.Point(671, 30);
+            this.Startscreen_Panel.Name = "Startscreen_Panel";
+            this.Startscreen_Panel.Size = new System.Drawing.Size(677, 547);
+            this.Startscreen_Panel.TabIndex = 5;
+            // 
+            // Start
+            // 
+            this.Start.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Start.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Start.ForeColor = System.Drawing.Color.Lime;
+            this.Start.Location = new System.Drawing.Point(180, 383);
+            this.Start.Name = "Start";
+            this.Start.Size = new System.Drawing.Size(316, 48);
+            this.Start.TabIndex = 0;
+            this.Start.Text = "Start";
+            this.Start.UseVisualStyleBackColor = true;
+            this.Start.Click += new System.EventHandler(this.MnuStart_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackgroundImage = global::RotateObject.Properties.Resources.alien1;
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox4.Location = new System.Drawing.Point(231, 188);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(215, 171);
+            this.pictureBox4.TabIndex = 1;
+            this.pictureBox4.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Lime;
+            this.label2.Location = new System.Drawing.Point(153, 65);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(371, 108);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Planets";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(679, 546);
+            this.Controls.Add(this.Startscreen_Panel);
+            this.Controls.Add(this.Gameover_Panel);
             this.Controls.Add(this.LifeTxtDisplay);
             this.Controls.Add(this.LifeTxt);
             this.Controls.Add(this.Canvas);
@@ -176,6 +264,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.Healthbar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.Gameover_Panel.ResumeLayout(false);
+            this.Gameover_Panel.PerformLayout();
+            this.Startscreen_Panel.ResumeLayout(false);
+            this.Startscreen_Panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -194,6 +287,13 @@
         private System.Windows.Forms.PictureBox Healthbar;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Panel Gameover_Panel;
+        private System.Windows.Forms.Label Gameover_score;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel Startscreen_Panel;
+        private System.Windows.Forms.Button Start;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label label2;
     }
 }
 
