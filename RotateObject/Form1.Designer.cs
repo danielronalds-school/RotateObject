@@ -36,16 +36,22 @@
             this.ScoreTxt = new System.Windows.Forms.Label();
             this.LifeTxtDisplay = new System.Windows.Forms.Label();
             this.ScoreTxtDisplay = new System.Windows.Forms.Label();
-            this.StartButton = new System.Windows.Forms.Button();
-            this.StopButton = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.startToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Healthbar = new System.Windows.Forms.PictureBox();
+            this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Healthbar)).BeginInit();
             this.SuspendLayout();
             // 
             // Canvas
             // 
             this.Canvas.BackColor = System.Drawing.Color.Silver;
-            this.Canvas.Location = new System.Drawing.Point(12, 12);
+            this.Canvas.Location = new System.Drawing.Point(12, 27);
             this.Canvas.Name = "Canvas";
-            this.Canvas.Size = new System.Drawing.Size(650, 522);
+            this.Canvas.Size = new System.Drawing.Size(650, 507);
             this.Canvas.TabIndex = 0;
             this.Canvas.Paint += new System.Windows.Forms.PaintEventHandler(this.Canvas_Paint);
             this.Canvas.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
@@ -64,7 +70,7 @@
             // LifeTxt
             // 
             this.LifeTxt.AutoSize = true;
-            this.LifeTxt.Location = new System.Drawing.Point(668, 21);
+            this.LifeTxt.Location = new System.Drawing.Point(668, 27);
             this.LifeTxt.Name = "LifeTxt";
             this.LifeTxt.Size = new System.Drawing.Size(24, 13);
             this.LifeTxt.TabIndex = 1;
@@ -73,7 +79,7 @@
             // ScoreTxt
             // 
             this.ScoreTxt.AutoSize = true;
-            this.ScoreTxt.Location = new System.Drawing.Point(668, 34);
+            this.ScoreTxt.Location = new System.Drawing.Point(668, 51);
             this.ScoreTxt.Name = "ScoreTxt";
             this.ScoreTxt.Size = new System.Drawing.Size(35, 13);
             this.ScoreTxt.TabIndex = 2;
@@ -82,7 +88,7 @@
             // LifeTxtDisplay
             // 
             this.LifeTxtDisplay.AutoSize = true;
-            this.LifeTxtDisplay.Location = new System.Drawing.Point(709, 21);
+            this.LifeTxtDisplay.Location = new System.Drawing.Point(709, 27);
             this.LifeTxtDisplay.Name = "LifeTxtDisplay";
             this.LifeTxtDisplay.Size = new System.Drawing.Size(19, 13);
             this.LifeTxtDisplay.TabIndex = 3;
@@ -91,44 +97,69 @@
             // ScoreTxtDisplay
             // 
             this.ScoreTxtDisplay.AutoSize = true;
-            this.ScoreTxtDisplay.Location = new System.Drawing.Point(709, 34);
+            this.ScoreTxtDisplay.Location = new System.Drawing.Point(709, 51);
             this.ScoreTxtDisplay.Name = "ScoreTxtDisplay";
             this.ScoreTxtDisplay.Size = new System.Drawing.Size(13, 13);
             this.ScoreTxtDisplay.TabIndex = 4;
             this.ScoreTxtDisplay.Text = "0";
             // 
-            // StartButton
+            // menuStrip1
             // 
-            this.StartButton.Location = new System.Drawing.Point(671, 86);
-            this.StartButton.Name = "StartButton";
-            this.StartButton.Size = new System.Drawing.Size(104, 23);
-            this.StartButton.TabIndex = 5;
-            this.StartButton.Text = "Start";
-            this.StartButton.UseVisualStyleBackColor = true;
-            this.StartButton.Click += new System.EventHandler(this.MnuStart_Click);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.startToolStripMenuItem,
+            this.stopToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(887, 24);
+            this.menuStrip1.TabIndex = 7;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // StopButton
+            // startToolStripMenuItem
             // 
-            this.StopButton.Location = new System.Drawing.Point(671, 115);
-            this.StopButton.Name = "StopButton";
-            this.StopButton.Size = new System.Drawing.Size(104, 23);
-            this.StopButton.TabIndex = 6;
-            this.StopButton.Text = "Stop";
-            this.StopButton.UseVisualStyleBackColor = true;
-            this.StopButton.Click += new System.EventHandler(this.MnuStop_Click);
+            this.startToolStripMenuItem.Name = "startToolStripMenuItem";
+            this.startToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.startToolStripMenuItem.Text = "Start";
+            this.startToolStripMenuItem.Click += new System.EventHandler(this.MnuStart_Click);
+            // 
+            // stopToolStripMenuItem
+            // 
+            this.stopToolStripMenuItem.Name = "stopToolStripMenuItem";
+            this.stopToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.stopToolStripMenuItem.Text = "Stop";
+            this.stopToolStripMenuItem.Click += new System.EventHandler(this.MnuStop_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Red;
+            this.pictureBox1.Location = new System.Drawing.Point(671, 87);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(200, 18);
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
+            // Healthbar
+            // 
+            this.Healthbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.Healthbar.Location = new System.Drawing.Point(671, 87);
+            this.Healthbar.Name = "Healthbar";
+            this.Healthbar.Size = new System.Drawing.Size(200, 18);
+            this.Healthbar.TabIndex = 9;
+            this.Healthbar.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(787, 546);
-            this.Controls.Add(this.StopButton);
-            this.Controls.Add(this.StartButton);
+            this.ClientSize = new System.Drawing.Size(887, 546);
+            this.Controls.Add(this.Healthbar);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ScoreTxtDisplay);
             this.Controls.Add(this.LifeTxtDisplay);
             this.Controls.Add(this.ScoreTxt);
             this.Controls.Add(this.LifeTxt);
             this.Controls.Add(this.Canvas);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -136,6 +167,10 @@
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Healthbar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -150,8 +185,11 @@
         private System.Windows.Forms.Label ScoreTxt;
         private System.Windows.Forms.Label LifeTxtDisplay;
         private System.Windows.Forms.Label ScoreTxtDisplay;
-        private System.Windows.Forms.Button StartButton;
-        private System.Windows.Forms.Button StopButton;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem startToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem stopToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox Healthbar;
     }
 }
 

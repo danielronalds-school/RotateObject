@@ -37,7 +37,7 @@ namespace RotateObject
                 planet[i] = new Planet(x);
             }
 
-
+            UpdateHealthBar();
         }
 
         private void Canvas_Paint(object sender, PaintEventArgs e)
@@ -110,6 +110,7 @@ namespace RotateObject
                     int rndmyspawn = yspawn.Next(1, 80);
                     life--;
                     UpdateLifeDisplay();
+                    UpdateHealthBar();
                     planet[i].y = rndmyspawn;
                 }
                 foreach (Missile m in missiles)
@@ -164,6 +165,11 @@ namespace RotateObject
         private void MnuStop_Click(object sender, EventArgs e)
         {
             GameStop();
+        }
+
+        private void UpdateHealthBar()
+        {
+            Healthbar.Width = life * 20; 
         }
     }
 }

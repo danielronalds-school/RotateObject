@@ -13,7 +13,7 @@ namespace RotateObject
     {
         public int x, y, width, height;
         public int missileRotated;
-        public int missileSpeed = 4;
+        public int missileSpeed = 5;
         public double xSpeed, ySpeed;
         public Image missile;//variable for the missile's image
         public Rectangle missileRec;//variable for a rectangle to place our image in
