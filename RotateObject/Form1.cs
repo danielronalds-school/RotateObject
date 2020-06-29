@@ -144,16 +144,13 @@ namespace RotateObject
         public void GameOver()
         {
             GameStop();
-            Gameover_score.Text = Convert.ToString(score);
-            Gameover_Panel.Left = 0;
-            Gameover_Panel.Top = 0;
         }
 
         public void GameStop()
         {
             tmrSpaceship.Enabled = false;
             tmrPlanet.Enabled = false;
-
+            GameoverScreen(false);
         }
 
         public void GameStart()
@@ -184,13 +181,53 @@ namespace RotateObject
             {
                 Startscreen_Panel.Left += 1000;
                 Start.Enabled = false;
+                Reset_Button.Enabled = false;
             }
             else
             {
                 Startscreen_Panel.Left = 0;
                 Startscreen_Panel.Top = 0;
                 Start.Enabled = true;
+                Reset_Button.Enabled = true;
             }
+        }
+
+        private void GameoverScreen(bool Hidden)
+        {
+            if (Hidden)
+            {
+                Gameover_Panel.Left += 1000;
+                Reset_Button.Enabled = false;
+            }
+            else
+            {
+                Gameover_score.Text = Convert.ToString(score);
+                Gameover_Panel.Left = 0;
+                Gameover_Panel.Top = 0;
+                Reset_Button.Enabled = true;
+            }
+        }
+
+        private void Reset_Button_Click(object sender, EventArgs e)
+        {
+            GameoverScreen(true);
+            StartScreen(true);
+            ResetGame();
+            GameStart();
+        }
+
+        private void ResetGame()
+        {
+            life = 10;
+            score = 0;
+            for (int i = 0; i < 6; i++)
+            {
+                planet[i].MovePlanet();
+                int rndmyspawn = yspawn.Next(1, 80);
+                planet[i].y = rndmyspawn;
+            }
+            UpdateHealthBar();
+            UpdateScoreDisplay();
         }
     }
 }

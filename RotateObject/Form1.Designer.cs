@@ -47,6 +47,7 @@
             this.Start = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.Reset_Button = new System.Windows.Forms.Button();
             this.Canvas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Healthbar)).BeginInit();
@@ -166,9 +167,10 @@
             // 
             // Gameover_Panel
             // 
+            this.Gameover_Panel.Controls.Add(this.Reset_Button);
             this.Gameover_Panel.Controls.Add(this.Gameover_score);
             this.Gameover_Panel.Controls.Add(this.label1);
-            this.Gameover_Panel.Location = new System.Drawing.Point(668, 117);
+            this.Gameover_Panel.Location = new System.Drawing.Point(674, 18);
             this.Gameover_Panel.Name = "Gameover_Panel";
             this.Gameover_Panel.Size = new System.Drawing.Size(679, 545);
             this.Gameover_Panel.TabIndex = 4;
@@ -240,6 +242,19 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Planets";
             // 
+            // Reset_Button
+            // 
+            this.Reset_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Reset_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Reset_Button.ForeColor = System.Drawing.Color.Lime;
+            this.Reset_Button.Location = new System.Drawing.Point(217, 335);
+            this.Reset_Button.Name = "Reset_Button";
+            this.Reset_Button.Size = new System.Drawing.Size(244, 41);
+            this.Reset_Button.TabIndex = 2;
+            this.Reset_Button.Text = "Play Again";
+            this.Reset_Button.UseVisualStyleBackColor = true;
+            this.Reset_Button.Click += new System.EventHandler(this.Reset_Button_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -294,6 +309,7 @@
         private System.Windows.Forms.Button Start;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button Reset_Button;
     }
 }
 
